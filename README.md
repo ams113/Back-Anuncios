@@ -6,7 +6,7 @@
 Opcionalmente puede descargar el cliente Mongo [Robo 3T](https://robomongo.org/).
 
 - Crear la base de datos *Prueba*
-- Crear la collecion Anuncios.
+- Crear la collección Anuncios.
 
 
 Realizar un *insert* en la BD con los datos de ejemplo de fichero data.json: [Datos anuncio](https://github.com/ams113/Back-Anuncios/tree/master/Data).
