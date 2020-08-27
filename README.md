@@ -1,8 +1,15 @@
 # Backend MERN - Anuncios
 
 ## Instalacion
-**Instalar en el equipo MongoDB** [Link de instalación](https://docs.mongodb.com/manual/administration/install-community/).
-Realizar un insert en la BD con los datos de ejemplo [Datos anuncio](https://github.com/ams113/Back-Anuncios/tree/master/Data).
+**Instalar en el equipo la base de datos MongoDB:** [Link de instalación](https://docs.mongodb.com/manual/administration/install-community/).
+
+Opcionalmente puede descargar el cliente Mongo [Robo 3T](https://robomongo.org/).
+
+- Crear la base de datos *Prueba*
+- Crear la collecion Anuncios.
+
+
+Realizar un *insert* en la BD con los datos de ejemplo de fichero data.json: [Datos anuncio](https://github.com/ams113/Back-Anuncios/tree/master/Data).
 
 Instalación de las dependencias del server.
 
