@@ -25,12 +25,13 @@ API REST de desarrollo.<br />
 Abrir [http://localhost:4000/api/](http://localhost:4000/api/) para ver en el navegador.
 
 API REST de Anuncios.<br />
-Abrir [http://localhost:4000/api/](http://localhost:4000/api/) para ver en el navegador.
+Abrir [http://localhost:4000/api/ads/](http://localhost:4000/api/ads/) para ver en el navegador.
 
 Interfaz de consulta graphQL.<br />
 Abrir [http://localhost:4000/graphql](http://localhost:4000/graphql) para ver en el navegador.
 
+Métodos de consulta disponibles [GET, POST]
 
 **Note:**
 
-La carpeta Apollo contiene la implementación de graphQL con Node pero esta implemnetación no se ha desarrollado con éxito.
+La directorio Apollo contiene la implementación de graphQL con Node pero esta implemnetación no se ha desarrollado con éxito.
