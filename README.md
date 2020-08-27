@@ -1,7 +1,8 @@
 # Backend MERN - Anuncios
 
 ## Descripción
-El proyecto esta estructurado por varios directorios cada uno con una tare especifica:
+El proyecto esta estructurado por varios directorios cada uno con una tarea específica:
+
 - **database:** Directorio encargado de instanciar la conexión con la BD
 - **controllers:** Directorio encargado de realizar las consultas a la BD
 - **helpers:** Directorio con funciones adicionales como realizar la puntuación de un anuncio.
