@@ -1,6 +1,6 @@
 # Backend MERN - Anuncios
 
-## Instalacion
+## Instalación
 **Instalar en el equipo la base de datos MongoDB:** [Link de instalación](https://docs.mongodb.com/manual/administration/install-community/).
 
 Opcionalmente puede descargar el cliente Mongo [Robo 3T](https://robomongo.org/).
