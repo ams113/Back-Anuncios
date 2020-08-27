@@ -34,6 +34,6 @@ Abrir [http://localhost:4000/graphql](http://localhost:4000/graphql) para ver en
 
 Métodos de consulta disponibles [GET, POST]
 
-**Note:**
+**Nota:**
 
 La directorio Apollo contiene la implementación de graphQL con Node pero esta implemnetación no se ha desarrollado con éxito.
