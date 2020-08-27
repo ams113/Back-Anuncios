@@ -20,7 +20,7 @@ Instalación de las dependencias del server.
 En el directorio del proyecto para levantar el servidor
 
 ### `npm start`
-
+<br />
 API REST de desarrollo.<br />
 Abrir [http://localhost:4000/api/](http://localhost:4000/api/) para ver en el navegador.
 
