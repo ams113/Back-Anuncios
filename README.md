@@ -1,6 +1,19 @@
 # Backend MERN - Anuncios
 
+## Descripción
+El proyecto esta estructurado por varios directorios cada uno con una tare especifica:
+- **database:** Directorio encargado de instanciar la conexión con la BD
+- **controllers:** Directorio encargado de realizar las consultas a la BD
+- **helpers:** Directorio con funciones adicionales como realizar la puntuación de un anuncio.
+- **middlewares:** Directorio encargado de validaciones o integraciones con otros elementos Oauth2,  GraphQL.
+- **models:** Directorio se alojan los esquemas de las colleciones de la base de datos.
+- **routes:** Directorio encargado de gestionar las rutas y peticiones mediante express.
+
+
 ## Instalación
+Tener previamente instalado en el equipo [Node.js](https://nodejs.org/es/). 
+
+
 **Instalar en el equipo la base de datos MongoDB:** [Link de instalación](https://docs.mongodb.com/manual/administration/install-community/).
 
 Opcionalmente puede descargar el cliente Mongo [Robo 3T](https://robomongo.org/).
