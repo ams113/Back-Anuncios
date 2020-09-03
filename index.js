@@ -1,38 +1,36 @@
-const express = require('express');
-require('dotenv').config();
-const cors = require('cors');
-const { dbConnection } = require('./database/config');
+require('dotenv').config( {path: '.env'} );
 
-// Crear el servidor de express
-const app = express();
+const { ApolloServer } = require('apollo-server');
+const mongoose = require('mongoose');
+const typeDefs = require('./gql/schema');
+const resolvers = require('./gql/resolver');
 
-// Base de datos
-dbConnection();
+mongoose.connect(process.env.DB, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: true,
+    useCreateIndex: true
 
-// CORS
-app.use(cors());
-
-// Directorio Público
-// app.use( express.static('public') );
-
-// Lectura y parseo del body
-app.use( express.json() );
-
-// Rutas
-
-app.use('/api/ads', require('./routes/ads') );
-app.use('/api', require('./routes/app') );
-
-
-
-
-// Escuchar peticiones
-app.listen( 4000, () => {
-    console.log(`Servidor corriendo en puerto ${ 4000 }`);
+}, (err, _) => {
+    if ( err ) {
+        console.log('Error de conexión MongoDB');
+    } else {
+        console.log('Conexión MongoDB establecida');
+        server();
+    }
 });
 
+const server = () => {
 
+    const serverApollo = new ApolloServer({
+        typeDefs,
+        resolvers,
+    });
 
-
-
-
+    serverApollo.listen()
+        .then( ( { url }) => {
+            console.log('##########################################');
+            console.log('Server Apollo running ' + url);
+            console.log('##########################################');
+        });
+};

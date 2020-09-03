@@ -1,0 +1,35 @@
+----------------------------------------------
+QUERY
+----------------------------------------------
+mutation uploadAd( $input: UploadInputs) {
+  uploadAd(input: $input) {
+    msg
+  }
+}
+----------------------------------------------
+VARIABLES
+----------------------------------------------
+{
+  "input": {
+    "type": "Vehiculo",
+    "description": "R5",
+    "km": 12200000,
+    "color": "rojo",
+    "fabricant": "Renault"
+  }
+}
+----------------------------------------------
+  "input": {
+    "type": "PISO",
+    "description": "Luminoso piso en Orito esta como nuevo fabuloso",
+    "size": 122,
+  }
+}
+----------------------------------------------
+  "input": {
+    "type": "CHALET",
+    "description": "excepcional y lujoso BALBLABLABLA Luminoso en Orito esta como nuevo fabuloso",
+    "size": 422,
+  }
+}
+}}

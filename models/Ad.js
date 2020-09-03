@@ -1,16 +1,11 @@
 const { Schema, model } = require('mongoose');
 
-const AnuncioSchema = Schema({
-    id: {
-        type: Number,
-        required: true,
-        unique: true
-    },
-    type: [{
+const adSchema = Schema({
+    type: {
         type: String, 
-        enum: ['PISO', 'CHALET', 'VEHICULO','FRIGORIFICO'], 
-        required: true
-    }],
+        required: true,
+        trim: true,
+    },
     description: {
         type: String,
     },
@@ -35,6 +30,4 @@ const AnuncioSchema = Schema({
 });
 
 
-module.exports = model('Anuncio', AnuncioSchema );
-
-    
+module.exports = model('Ad', adSchema );

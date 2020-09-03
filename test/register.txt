@@ -1,0 +1,40 @@
+----------------------------------------------
+QUERY
+----------------------------------------------
+mutation register($input: UserInput) {
+  register(input: $input) {
+    id
+    userName
+    email
+    createAt
+  }
+}
+----------------------------------------------
+VARIABLES
+----------------------------------------------
+{
+  "input": {
+    "name": "pepe",
+    "userName": "pepe1",
+    "email": "pepe1@gmail.com",
+    "password": "123456"
+  }
+}
+----------------------------------------------
+{
+  "input": {
+    "name": "jose",
+    "userName": "jose1",
+    "email": "jose1@gmail.com",
+    "password": "123456"
+  }
+}
+----------------------------------------------
+{
+  "input": {
+    "name": "juan",
+    "userName": "juan1",
+    "email": "juan1@gmail.com",
+    "password": "123456"
+  }
+}
