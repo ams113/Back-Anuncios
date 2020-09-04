@@ -25,7 +25,7 @@ Instalación de las dependencias del server.
 
 En el directorio del proyecto para levantar el servidor
 
-### `npm start`
+### `yarn dev` / `node index.js` / `npm start`
 <br />
 
 Playground<br />
