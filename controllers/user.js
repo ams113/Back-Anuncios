@@ -95,12 +95,21 @@ const prueba =  ( input ) => {
     };
 }
 
-  
+const getUser = async (id) => {
+
+    console.log(id);
+    let user = null;
+
+    user = await User.find();
+
+    return user;
+};
 
 
 
 module.exports = {
     register,
     login, 
-    prueba
+    prueba,
+    getUser,
 }

@@ -4,11 +4,12 @@ const { ApolloServer } = require('apollo-server');
 const mongoose = require('mongoose');
 const typeDefs = require('./gql/schema');
 const resolvers = require('./gql/resolver');
+const jwt= require('jsonwebtoken');
 
 mongoose.connect(process.env.DB, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useFindAndModify: true,
+    useFindAndModify: false,
     useCreateIndex: true
 
 }, (err, _) => {
@@ -25,6 +26,30 @@ const server = () => {
     const serverApollo = new ApolloServer({
         typeDefs,
         resolvers,
+        context: ( { req } ) => {
+            const token = req.headers.authorization;
+
+            if ( token ) {
+                try {
+
+                    const user = jwt.verify(
+                        token.replace('Bearer ', ''),
+                        process.env.SECRET_KEY
+                    );
+
+                     // console.log(user);
+
+                    return {
+                        user
+                    };
+                    
+                } catch (error) {
+                    console.error('#### ERROR ####');
+                    console.log(error);
+                    throw new Error('Token Invalido');
+                }
+            }
+        }
     });
 
     serverApollo.listen()

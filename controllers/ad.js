@@ -1,5 +1,6 @@
 const  Ad = require('../models/Ad');
-
+const awsUploadImage = require('../utils/aws-upload-image');
+const { v4: uuidv4 } = require('uuid');
 
 
 
@@ -125,7 +126,69 @@ const calculateRate = async ( id ) => {
 }
 
 
+const uploadImg = async ( file, context ) => {
+
+    
+    // const { id } = context.user;
+    const id  = uuidv4();
+    
+    const { createReadStream, mimetype } = await file;
+    const extension = mimetype.split('/')[1]; 
+    const imagePath = `ads/${ id }.${ extension }`;
+    const fileData = createReadStream();
+ 
+
+    try {
+
+        console.log(imagePath);
+        
+        const result = await awsUploadImage( fileData, imagePath );
+
+        
+        return {
+            status: true,
+            urlAvatar: result
+        }; 
+
+    } catch (error) {
+        return {
+            status: false,
+            urlAvatar: null
+        };
+    } 
+       
+};
+  
+const getAd = async ( id ) => {
+
+    console.log('getAd ', id);
+
+    let ad = null;
+
+    if ( id ) ad = await Ad.findById(id);
+
+    if ( !ad ) throw new Error( 'El Anuncio no existe ');
+    console.log(ad);
+    return ad;
+};
+
+const getAds = async ( id ) => {
+
+    console.log(id);
+
+    let ads = null;
+
+    ads = await Ad.find().sort({score: -1});
+
+    
+    return ads;
+};
+
+
 
 module.exports = {
-    uploadAd
+    uploadAd,
+    uploadImg,
+    getAd,
+    getAds,
 };

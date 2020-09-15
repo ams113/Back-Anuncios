@@ -27,6 +27,11 @@ const adSchema = Schema({
     score: {
         type: Number, default: 0,
     },
+    img: {
+        type: String, 
+        trim: true,
+
+    },
 });
 
 

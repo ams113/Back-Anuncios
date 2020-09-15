@@ -21,6 +21,7 @@ const typeDefs = gql`
         msg: String
     }
 
+
     type Ad {
         id: ID
         description: String
@@ -31,11 +32,18 @@ const typeDefs = gql`
         color: String
         fabricant: String
         height: Int
+        img: String
     }
 
     input PruebaInput {
         type: String!
     }
+
+    type UpdateAvatar {
+        status: Boolean
+        urlAvatar: String
+    }
+
 
     input UserInput {
         name: String!
@@ -57,6 +65,7 @@ const typeDefs = gql`
         color: String
         fabricant: String
         height: Int
+        img: String
     }
 
     input AdInput {
@@ -67,13 +76,15 @@ const typeDefs = gql`
         color: String
         fabricant: String
         height: Int
+        img: String
     }
 
     type Query {
         # User
-        getUser: User
+        getUser( id: ID): [User]
         # Ad
-        getAd: Ad
+        getAd( id: ID ): Ad
+        getAds(id: ID ): [Ad]
     }
 
     type Mutation {
@@ -81,8 +92,11 @@ const typeDefs = gql`
         register( input: UserInput ): User
         login( input: LoginInput ): Token
         
+        
         # Ad
         uploadAd( input: UploadInputs ): SaveAd
+        updateAvatar( file: Upload): UpdateAvatar
+
     }
 
 `;
