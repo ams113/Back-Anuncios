@@ -8,6 +8,9 @@ El proyecto esta estructurado por varios directorios cada uno con una tarea espe
 - **controllers:** Directorio encargado de realizar las consultas a la BD
 - **models:** Directorio se alojan los esquemas de las colleciones de la base de datos.
 - **gql:** Directorio encargado de gestionar las rutas y peticiones mediante graphQL.
+- **Utils:** Conectores con otros servicios
+
+**Importante:** Las claves de AWS no estan publicadas por seguridad, por lo tanto el servicio de AWS de subida de imágenes no esta funcional.
 
 ## Desplieque mediante docker
 
